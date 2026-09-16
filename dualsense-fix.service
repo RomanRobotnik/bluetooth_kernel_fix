@@ -1,0 +1,11 @@
+[Unit]
+Description=Fix DualSense Bluetooth Race Condition
+After=bluetooth.service
+Requires=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe dualsense_fix
+
+[Install]
+WantedBy=multi-user.target
